@@ -1,18 +1,10 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 
-import colors from '../../utils/color';
+import styles from './LoaderText.style';
 
 const LoaderText = ({...props}) => {
-  return (
-    <View
-      style={{
-        backgroundColor: colors.light,
-        width: 120,
-        height: 16,
-        ...props,
-      }}></View>
-  );
+  return <View style={[styles.container, {...props}]} />;
 };
 
 export default LoaderText;

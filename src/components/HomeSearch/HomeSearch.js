@@ -6,6 +6,8 @@ import Input from '../Input/Input';
 
 import colors from '../../utils/color';
 
+import styles from './HomeSearch.style';
+
 const HomeSearch = ({isSearchFocus, onSearchFocus}) => {
   const [search, setSearch] = useState(null);
 
@@ -43,23 +45,18 @@ const HomeSearch = ({isSearchFocus, onSearchFocus}) => {
   };
 
   return (
-    <Animated.View
-      style={{
-        position: 'relative',
-        zIndex: 1,
-        height: heroHeight,
-      }}>
-      {/* {!isSearchFocus && <LogoComponent />} */}
+    <Animated.View style={[styles.container, {height: heroHeight}]}>
       <Animated.View style={{opacity: bgOpacity}}>
         <LogoComponent />
       </Animated.View>
       <View
-        style={{
-          flexDirection: 'row',
-          position: 'absolute',
-          bottom: isSearchFocus ? 0 : -20,
-          paddingBottom: isSearchFocus ? 10 : 0,
-        }}>
+        style={[
+          styles.search,
+          {
+            bottom: isSearchFocus ? 0 : -20,
+            paddingBottom: isSearchFocus ? 10 : 0,
+          },
+        ]}>
         <Input
           title="Türkçe Sözlük'te Ara"
           value={search}
@@ -68,14 +65,8 @@ const HomeSearch = ({isSearchFocus, onSearchFocus}) => {
           clearValue={() => setSearch('')}
         />
         {isSearchFocus && (
-          <TouchableOpacity
-            style={{
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginRight: 16,
-            }}
-            onPress={onCancel}>
-            <Text style={{color: colors.textDark}}>Vazgeç</Text>
+          <TouchableOpacity style={styles.cancelButton} onPress={onCancel}>
+            <Text style={styles.cancelText}>Vazgeç</Text>
           </TouchableOpacity>
         )}
       </View>

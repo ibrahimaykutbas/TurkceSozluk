@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
 
 import colors from '../../utils/color';
 
@@ -7,17 +7,11 @@ import SearchIcon from '../../icons/search.svg';
 import HistoryIcon from '../../icons/history.svg';
 import FavoriteIcon from '../../icons/bookmark.svg';
 
+import styles from './TabBar.style';
+
 function TabBar({state, descriptors, navigation}) {
   return (
-    <View
-      style={{
-        flexDirection: 'row',
-        backgroundColor: 'white',
-        shadowColor: '#000',
-        shadowOpacity: 0.1,
-        shadowRadius: 20,
-        elevation: 20,
-      }}>
+    <View style={styles.container}>
       {state.routes.map((route, index) => {
         const {options} = descriptors[route.key];
         const label =
@@ -43,37 +37,13 @@ function TabBar({state, descriptors, navigation}) {
         };
 
         return label === 'Search' ? (
-          <View
-            style={{
-              backgroundColor: 'white',
-              padding: 15,
-              marginTop: -15,
-              borderRadius: 9999,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <TouchableOpacity
-              onPress={onPress}
-              style={{
-                backgroundColor: colors.red,
-                width: 56,
-                height: 56,
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                borderRadius: 9999,
-              }}>
+          <View style={styles.searchContainer}>
+            <TouchableOpacity onPress={onPress} style={styles.searchBotton}>
               <SearchIcon color="white" />
             </TouchableOpacity>
           </View>
         ) : (
-          <TouchableOpacity
-            onPress={onPress}
-            style={{
-              flex: 1,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
+          <TouchableOpacity onPress={onPress} style={styles.button}>
             {label === 'History' && (
               <HistoryIcon color={isFocused ? colors.red : colors.textLight} />
             )}
@@ -81,13 +51,12 @@ function TabBar({state, descriptors, navigation}) {
               <FavoriteIcon color={isFocused ? colors.red : colors.textLight} />
             )}
             <View
-              style={{
-                width: 4,
-                height: 4,
-                backgroundColor: isFocused ? 'red' : 'white',
-                borderRadius: 50,
-                marginTop: 8,
-              }}
+              style={[
+                styles.activeButton,
+                {
+                  backgroundColor: isFocused ? 'red' : 'white',
+                },
+              ]}
             />
           </TouchableOpacity>
         );

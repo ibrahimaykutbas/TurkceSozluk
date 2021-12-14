@@ -4,11 +4,14 @@ import colors from '../../utils/color';
 
 export default StyleSheet.create({
   container: {
-    marginVertical: 12,
-    paddingHorizontal: 16,
-  },
-  text: {
-    color: colors.textLight,
+    backgroundColor: 'white',
+    borderRadius: 6,
+    padding: 16,
     marginBottom: 10,
+  },
+  title: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: colors.textMedium,
   },
 });

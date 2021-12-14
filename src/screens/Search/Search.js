@@ -57,7 +57,7 @@ const Search = ({navigation}) => {
             <SearchHistoryList data={Data} />
           </View>
         ) : (
-          <View style={{flex: 1, paddingHorizontal: 16, paddingVertical: 40}}>
+          <View style={{flex: 1, paddingHorizontal: 16, paddingVertical: 20}}>
             <SuggestionCard
               data={homeData?.kelime[0]}
               title="Bir Kelime"

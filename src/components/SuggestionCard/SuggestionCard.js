@@ -4,19 +4,12 @@ import {View, Text} from 'react-native';
 import {CardContainer, CardTitle, CardSummary} from '../Card/Card';
 import LoaderText from '../LoaderText/LoaderText';
 
-import colors from '../../utils/color';
+import styles from './SuggestionCard.style';
 
 const SuggestionCard = ({title, onPress, data, ...props}) => {
   return (
     <View {...props}>
-      <Text
-        style={{
-          color: colors.textLight,
-          marginTop: 20,
-          marginBottom: 10,
-        }}>
-        {title}
-      </Text>
+      <Text style={styles.title}>{title}</Text>
       <CardContainer onPress={onPress}>
         {data ? (
           <>

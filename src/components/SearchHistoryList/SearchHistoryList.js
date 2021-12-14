@@ -6,15 +6,12 @@ import {
   SimpleCardTitle,
 } from '../../components/SimpleCard/SimpleCard';
 
-import colors from '../../utils/color';
+import styles from './SearchHistoryList.style';
 
 const SearchHistoryList = ({data}) => {
   return (
     <FlatList
-      style={{
-        marginVertical: 12,
-        paddingHorizontal: 16,
-      }}
+      style={styles.container}
       data={data}
       keyExtractor={item => item.id}
       renderItem={({item}) => (
@@ -22,15 +19,7 @@ const SearchHistoryList = ({data}) => {
           <SimpleCardTitle>{item.title}</SimpleCardTitle>
         </SimpleCardContainer>
       )}
-      ListHeaderComponent={
-        <Text
-          style={{
-            color: colors.textLight,
-            marginBottom: 10,
-          }}>
-          Son Aramalar
-        </Text>
-      }
+      ListHeaderComponent={<Text style={styles.text}>Son Aramalar</Text>}
       showsVerticalScrollIndicator={false}
     />
   );
