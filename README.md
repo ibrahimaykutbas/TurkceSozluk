@@ -2,7 +2,7 @@
 
 <img src="images/AnaEkran.jpeg" height="500"> <img src="images/DetayEkranı.jpeg" height="500"> <img src="images/DetayYüklenmeEkranı.jpeg" height="500"> <img src="images/AramaEkranı.jpeg" height="500">
 
-## Kurulum
+## Teknoloji
 
 React Native
 
@@ -18,7 +18,7 @@ React Native
 - Tıklanın öğrenin detay sayfasına gidilmesi.
 - Verilerin yüklendiği sırada yükleniyor durumu gösterilmesi.
 
-## Başlangıç
+## Kurulum
 
 Bu depoyu yerel makinenizde klonlayın.
 
@@ -26,30 +26,35 @@ Bu depoyu yerel makinenizde klonlayın.
 git clone https://github.com/ibrahimaykutbas/TurkceSozluk.git
 ```
 
-### Kullanım
+### Hazırlık
 
-Projeyi klonladıktan sonra kullanmak için:
-
-```
-cd patika-react-native/TurkceSozluk
-cd .
-```
-
-Proje bağımlılıklarını yüklemek için proje klasörüne aşağıdaki komutları çalıştırın.
+Projeyi klonladıktan sonra ilgili dizine gidin.
 
 ```
-npm init
+cd TurkceSozluk
+code .
+```
+
+Proje bağımlılıklarını yüklemek için proje dizininde aşağıdaki komutları çalıştırın.
+
+```
 npm install
 ```
+Eğer macOS kullanıyorsanız ve iOS işletim sistemine sahip bir cihazda projeyi başlatacaksanız pod'ları yükleyin.
 
-Bu talimatlar, geliştirme ve test amacıyla yerel makinenizde projenin bir kopyasını hazır ve çalışır hale getirecektir.
+```
+cd ios
+pod install
+```
 
-## Kullanılabilir Komut Dosyaları
+### Kullanım
 
-Proje dizininde şunları çalıştırabilirsiniz:
+Projeyi başlatmak için aşağıdaki komutları kullanın.
 
 ```
 npx react-native run-android
+--or--
+npx react-native run-ios
 ```
 
 ## Daha Fazla Bilgi İçin
