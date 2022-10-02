@@ -1,6 +1,6 @@
 # Türkçe Sözlük
 
-<img src="images/AnaEkran.jpeg" height="500"> <img src="images/DetayEkranı.jpeg" height="500"> <img src="images/DetayYüklenmeEkranı.jpeg" height="500"> <img src="images/AramaEkranı.jpeg" height="500">
+<img src="images/AnaEkran.jpeg" height="500"> <img src="images/DetayEkranı.jpeg" height="500"> <img src="images/DetayYüklenmeEkranı.jpeg" height="500"> <img src="images/AramaEkranı.jpeg" height="500"> 
 
 ## Teknoloji
 
